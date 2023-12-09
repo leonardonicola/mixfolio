@@ -1,7 +1,6 @@
 {
   "tabWidth": 2,
   "arrowParens": "always",
-  "editorconfig": true,
   "endOfLine": "lf",
   "semi": false,
   "singleQuote": true
