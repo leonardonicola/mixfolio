@@ -3,9 +3,8 @@ export default {
   content: [],
   theme: {
     fontFamily: {
-      sans: ["Inter", "Arial", "sans-serif"],
+      sans: ['Inter', 'Arial', 'sans-serif'],
     },
   },
   plugins: [],
 }
-
