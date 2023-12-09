@@ -2,7 +2,7 @@ import type { UseFetchOptions } from 'nuxt/app'
 
 export function useCustomFetch<T>(
   url: string,
-  options: UseFetchOptions<T> = {}
+  options: UseFetchOptions<T> = {},
 ) {
   const config = useRuntimeConfig()
 
