@@ -12,28 +12,33 @@
     "lint:eslint": "eslint --ext \".ts,.vue\" --ignore-path .gitignore .",
     "lint:prettier": "prettier --check .",
     "lint:fix": "prettier --write --list-different . && pnpm lint:eslint --fix",
-    "test": "vitest"
+    "cypress:open": "cypress open",
+    "test": "start-server-and-test dev 3000 cypress:open"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
     "@nuxt/devtools": "latest",
-    "@nuxt/test-utils": "^3.8.1",
+    "@nuxt/image": "^1.1.0",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/google-fonts": "^3.1.1",
     "@nuxtjs/tailwindcss": "^6.10.1",
-    "@vitejs/plugin-vue": "^4.5.2",
-    "@vue/test-utils": "^2.4.3",
+    "@vueuse/core": "^10.7.0",
+    "@vueuse/nuxt": "^10.7.0",
+    "cypress": "^13.6.1",
     "eslint": "^8.55.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.0.1",
-    "eslint-plugin-vitest": "^0.3.12",
     "husky": "^8.0.3",
-    "jsdom": "^23.0.1",
     "nuxt": "^3.8.2",
+    "nuxt-icon": "^0.6.7",
     "prettier": "3.1.0",
-    "vitest": "^1.0.2",
     "vue": "^3.3.10",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@vee-validate/nuxt": "^4.12.2",
+    "@vee-validate/zod": "^4.12.2",
+    "zod": "^3.22.4"
   }
 }
