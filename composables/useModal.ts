@@ -15,7 +15,7 @@ export const useModal = () => {
     isOpen.value = false
     title.value = ''
     setTimeout(() => {
-      // Resetar estilo do body
+      // Resetar estilo do body com delay após fechar
       const body = document.body
       if (body) body.style.overflow = 'auto'
     }, 300)
