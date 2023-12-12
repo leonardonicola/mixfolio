@@ -1,75 +1,71 @@
-# Nuxt 3 Minimal Starter
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Mixfolio
 
-## Setup
+Resolução do desafio técnico da Faster!
 
-Make sure to install the dependencies:
+
+## Stacks utilizadas
+
+- Nuxt
+- Typescript
+- Tailwind
+- Zod 
+- Vee-Validate
+- Cypress
+
+## Variáveis de Ambiente
+
+Para rodar esse projeto, você vai precisar adicionar a seguinte variável de ambiente no seu .env assim como declarado no .env.example:
+
+
+`NUXT_PUBLIC_API_BASE`
+
+Ela servirá como base para a endpoint da API.
+
+
+## Rodando localmente
+
+Clone o projeto
 
 ```bash
-# npm
-npm install
+git clone https://github.com/leonardonicola/mixfolio
+```
 
-# pnpm
+Entre no diretório do projeto
+
+```bash
+cd mixfolio
+```
+
+Instale as dependências
+
+```bash
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+Rode em ambiente de desenvolvimento
+```bash
+pnpm dev
+```
 
-Start the development server on `http://localhost:3000`:
+
+## Rodando os testes
+
+Para rodar os testes com Cypress, há duas opções:
+
+Abrindo a GUI do Cypress e rodando os testes manualmente
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+pnpm test:open
 ```
 
-## Production
-
-Build the application for production:
+Rodando todos os testes no terminal automaticamente
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+pnpm test
 ```
 
-Locally preview production build:
+## Autores
 
-```bash
-# npm
-npm run preview
+- [@leonardonicola](https://www.github.com/leonardonicola)
 
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
