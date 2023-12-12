@@ -23,12 +23,10 @@ jobs:
           cache: pnpm
       - name: Install dependencies
         run: pnpm install
-      - name: Set API URL in env
-        env:
-          NUXT_PUBLIC_API_BASE: ${{ secrets.API_URL }}
-        run: echo "NUXT_PUBLIC_API_BASE=${{ secrets.API_URL }}"
       - name: Cypress run
         uses: cypress-io/github-action@v6
+        env:
+          NUXT_PUBLIC_API_BASE: ${{ secrets.API_URL }}
         with:
           start: pnpm dev
           wait-on: 'http://localhost:3000'
