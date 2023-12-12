@@ -26,6 +26,7 @@ jobs:
       - name: Set API URL in env
         env:
           NUXT_PUBLIC_API_BASE: ${{ secrets.API_URL }}
+        run: echo "NUXT_PUBLIC_API_BASE=${{ secrets.API_URL }}"
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
