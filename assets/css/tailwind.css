@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body,
+  html {
+    @apply overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply text-white bg-primary font-medium rounded-lg text-sm px-5 py-2.5 w-fit flex items-center gap-2;
+    @apply hover:bg-dark-primary focus:ring-4 focus:outline-none focus:ring-light-primary transition-colors disabled:bg-neutral-300 disabled:hover:bg-neutral-300;
+  }
+  .select {
+    @apply bg-white border border-gray-300 text-gray-900 font-semibold text-sm rounded-lg block p-2.5;
+    @apply focus:ring-blue-500 focus:border-blue-500 disabled:bg-background;
+  }
+  .input {
+    @apply bg-white border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5;
+    @apply focus:ring-dark-primary focus:border-primary transition-colors disabled:bg-background;
+  }
+
+  .p-error {
+    @apply bg-red-50 border-error text-error placeholder-error;
+  }
+}

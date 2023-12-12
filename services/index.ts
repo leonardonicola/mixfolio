@@ -2,7 +2,7 @@ import type { UseFetchOptions } from 'nuxt/app'
 
 export function useCustomFetch<T>(
   url: string,
-  options: UseFetchOptions<T> = {}
+  options: UseFetchOptions<T> = {},
 ) {
   const config = useRuntimeConfig()
 
@@ -10,22 +10,22 @@ export function useCustomFetch<T>(
     ...options,
     baseURL: config.public.apiBaseUrl,
     server: true,
-    onRequestError({ error }) {
-      console.error('Erro:', error)
-    },
-    onResponseError({ error, response }) {
-      console.error('Erro na resposta do servidor:', response.status)
-
+    onResponseError({ response }) {
       switch (response.status) {
         case 401:
-          console.error('Acesso não autorizado!')
+          createError({ statusCode: 401, fatal: true })
           break
         case 404:
-          console.error('Recurso não encontrado')
+          createError({ statusCode: 404 })
           break
-        // Exibir uma mensagem de erro genérica para outros tipos de erro
+        case 500:
+          createError({
+            statusCode: 500,
+            fatal: true,
+          })
+          break
         default:
-          console.error(`Erro: ${error?.message}`)
+          createError({ statusCode: response.status })
           break
       }
     },
