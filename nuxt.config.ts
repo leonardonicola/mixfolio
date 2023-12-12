@@ -26,4 +26,5 @@ export default defineNuxtConfig({
       title: 'Mixfolio',
     },
   },
+  ssr: false,
 })
