@@ -29,6 +29,8 @@ const searchDrinksByCategories = (category: string | null) => {
 const flattenCategories = computed(
   () => categoriesList.value?.drinks.map((drink) => drink.strCategory) || [],
 )
+
+defineProps<{ isLoading: boolean }>()
 </script>
 <template>
   <div
@@ -51,7 +53,7 @@ const flattenCategories = computed(
       @submit.prevent="searchDrinksByName"
     >
       <BaseInput
-        :disabled="isDisabled"
+        :disabled="isDisabled || isLoading || pending"
         name="drinkName"
         type="text"
         placeholder="Pesquise drinks pelo nome..."
@@ -63,8 +65,18 @@ const flattenCategories = computed(
           />
         </template>
       </BaseInput>
-      <button class="btn" type="submit" :disabled="isDisabled">
-        Pesquisar
+      <button
+        class="btn"
+        type="submit"
+        :disabled="isDisabled || isLoading || pending"
+      >
+        <Icon
+          v-if="isLoading || pending"
+          name="mdi:loading"
+          color="white"
+          class="animate-spin"
+        />
+        <span v-else>Pesquisar</span>
       </button>
     </form>
   </div>
