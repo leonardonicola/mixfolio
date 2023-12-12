@@ -37,7 +37,12 @@ const isFavorite = (item: Object) => {
           <th class="px-6 py-3 w-10">
             <Icon name="mdi:star" size="1.5em" />
           </th>
-          <th v-for="(label, index) in labels" :key="index" class="px-6 py-3">
+          <th
+            v-for="(label, index) in labels"
+            :key="index"
+            :data-cy="index"
+            class="px-6 py-3"
+          >
             {{ label.text }}
           </th>
         </tr>

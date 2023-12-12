@@ -12,8 +12,11 @@
     "lint:eslint": "eslint --ext \".ts,.vue\" --ignore-path .gitignore .",
     "lint:prettier": "prettier --check .",
     "lint:fix": "prettier --write --list-different . && pnpm lint:eslint --fix",
+    "cypress:run": "cypress run",
     "cypress:open": "cypress open",
-    "test": "start-server-and-test dev 3000 cypress:open"
+    "test:open": "start-server-and-test dev 3000 cypress:open",
+    "test": "start-server-and-test dev 3000 cypress:run",
+    "prepare": "is-ci || husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
@@ -30,6 +33,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.0.1",
     "husky": "^8.0.3",
+    "lint-staged": ">=10",
     "nuxt": "^3.8.2",
     "nuxt-icon": "^0.6.7",
     "prettier": "3.1.0",
@@ -39,6 +43,7 @@
   "dependencies": {
     "@vee-validate/nuxt": "^4.12.2",
     "@vee-validate/zod": "^4.12.2",
+    "start-server-and-test": "^2.0.3",
     "zod": "^3.22.4"
   }
 }
